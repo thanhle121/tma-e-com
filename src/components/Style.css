@@ -1,0 +1,127 @@
+/* Header */
+header{
+    background: linear-gradient(to bottom, #FFF9C4, #FFFFFF);
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav .header-logo img{
+    width: 100px;
+}
+
+.nav .header-menu a{
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 600;
+    color: forestgreen;
+    margin-right: 10px;
+}
+
+
+.nav .header-menu a:hover{
+    text-decoration: underline;
+}
+
+/* Footer */
+footer{
+    background-color: #000;
+}
+
+.footer-menu{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 60px 0;
+}
+
+.footer-care, .footer-loca, .footer-social, .footer-trans{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-care h2, .footer-loca h2, .footer-social h2, .footer-trans h2{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-care a, .footer-loca a, .footer-social a, .footer-trans a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.footer-care a:hover, .footer-loca a:hover, .footer-social a:hover, .footer-trans a:hover{
+    color: rgb(36, 161, 19);
+}
+
+/* Product Cart */
+
+.card-wrapper{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    max-width: 340px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card-wrapper:hover{
+    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+
+}
+
+.card-wrapper img{
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.card-wrapper img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.card-desc{
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.card-bt{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4px;
+    align-items: center;
+}
+
+.card-price{
+    color: rgb(208, 49, 49);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.card-btn{
+    padding: 10px 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card-btn:hover{
+    background-color: rgb(244, 231, 215);
+    cursor: pointer;
+    transform: scale(1.05);
+}

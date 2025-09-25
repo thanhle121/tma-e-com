@@ -5,13 +5,13 @@ import './DefaultLayout.css'
 
 function DefaultLayout(){
     return(
-        <>
+        <div className="body-web">
         <Header />
         <main>
             <Outlet />
         </main>
         <Footer />
-        </>
+        </div>
     )
 }
 

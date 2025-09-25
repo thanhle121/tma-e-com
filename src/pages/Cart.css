@@ -1,0 +1,32 @@
+.cart-wrapper{
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+h2{
+    text-align: center;
+    font-size: 34px;
+    margin: 40px 0;
+}
+
+.cart-list{
+    flex: 3;
+}
+
+.cart-list ul li{
+    list-style: none;
+}
+
+.cart-total{
+    flex: 1;
+}
+
+.check-btn{
+    background-color: rgb(225, 48, 48);
+    border: none;
+    color: #fff;
+    padding: 10px 40px;
+    margin-top: 10px;
+}
