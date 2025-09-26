@@ -6,7 +6,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Toaster position='top-right' reverseOrder={false} />
+      <Toaster position='bottom-right' reverseOrder={false} />
       <AppRoutes />
     </BrowserRouter>
   )
