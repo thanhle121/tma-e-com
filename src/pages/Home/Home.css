@@ -1,0 +1,127 @@
+.home-title{
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.home-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.home-top{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.home-top-right {
+    width: 100%;
+    max-width: 940px;
+    height: 400px;
+    flex: 1;
+}
+
+.home-top-left {
+    border: 1px solid #9fc7a3;
+    border-radius: 6px;
+    position: relative;
+    width: 250px;
+}
+
+.home-top-left ul{
+    margin: 0;
+}
+
+.home-top-left ul li{
+    list-style: none;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px ;
+}
+
+.danh-muc{
+    margin-right: 100px;
+}
+
+.home-top-left ul li:hover{
+    background-color: #329c3c;
+    cursor: pointer;
+    color: #fff;
+}
+
+.home-top-left .submenu {
+    display: none;
+    position: absolute;
+    top: -2px;
+    left: calc(100%);
+    width: calc(100% + 940px - 220px); 
+    height: calc(101%);
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    z-index: 10;
+}
+
+.home-top-left .submenu ul li{
+    color: #000;
+}
+
+.home-top-left li:hover .submenu ul li a{
+    text-decoration: none;
+    color: #000;
+}
+
+.home-top-left li:hover .submenu ul li:hover{
+    background-color: #fff;
+}
+
+.home-top-left li:hover .submenu ul li:hover a{
+    background-color: #fff;
+    color: rgb(219, 35, 35);
+}
+
+.home-top-left li:hover .submenu {
+    display: block;
+}
+
+.btn-line{
+    text-align: center;
+}
+
+.btn-more{
+    background-color: #9fc7a3;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.btn-more:hover{
+    border: 1px solid #9fc7a3;
+    background-color: #fff;
+    color: #9fc7a3;
+    cursor: pointer;
+}
+
+.btn-less{
+    background-color: rgb(220, 45, 45);
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: #fff;
+    border: 1px solid transparent;
+    margin-left: 2px;
+}
+
+.btn-less:hover{
+    border: 1px solid rgb(220, 45, 45);
+    background-color: #fff;
+    color: rgb(220, 45, 45);
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CartContext } from "./CartContext";
 
+
 export function CartProvider({ children }){
         const [cart, setCart] = useState([])
     
@@ -17,10 +18,14 @@ export function CartProvider({ children }){
             )
         }
 
+        const deleteItem = (id) => {
+            setCart(prev => prev.filter(item => item.id !== id))
+        }
+
         const cartCount = cart.reduce((total, item)=>total + item.quantity, 0)
 
         return(
-            <CartContext.Provider value={{ cart, addToCart, cartCount }}>
+            <CartContext.Provider value={{ cart, addToCart, cartCount, deleteItem }}>
                 { children }
             </CartContext.Provider>
         )
