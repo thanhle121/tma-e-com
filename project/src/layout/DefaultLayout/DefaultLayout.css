@@ -1,0 +1,23 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.body-web{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+}

@@ -1,0 +1,31 @@
+
+.account {
+  height: auto;
+  padding: 12px;
+  border-radius: 8px;
+  min-width: 120px;
+  background-color: #f5f5f5;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 4px;
+  border: none;
+}
+
+.accountUser{
+  max-width: 30px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.account:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.account a {
+  text-decoration: none;
+  color: #000;
+}

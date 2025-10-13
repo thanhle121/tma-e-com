@@ -1,0 +1,74 @@
+.signinContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 100px;
+}
+
+.imgSign{
+    width: 500px;
+}
+
+.signinForm{
+    border: none;
+    width: 400px;
+}
+
+.signinForm input{
+    width: 100%;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.signinForm input:focus{
+    outline: none;
+}
+
+.signinBtn{
+    width: 150px;
+    background-color: #db4444;
+    border: none;
+    color: #fff;
+    padding: 16px;
+    margin: 20px 0 40px;
+}
+
+.signinBtn:hover{
+    cursor: pointer;
+    background-color: #c63232;
+}
+
+.registNow:visited{
+    color: #db4444;
+}
+
+.backHome{
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.backHome:visited{
+    color: #000;
+}
+
+.passwordWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.eyeIcon {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    cursor: pointer;
+    color: #888;
+    font-size: 18px;
+    transition: color 0.2s ease;
+}
+
+.eyeIcon:hover {
+      color: #333;
+}
