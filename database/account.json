@@ -1,0 +1,22 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "email": "admin@gmail.com",
+      "password": "12",
+      "token": "nsSoW8SmsAq1sXlq02N"
+    },
+    {
+      "email": "s@gmail.com",
+      "password": "12345",
+      "token": "NYZJe6F5tEFPfxtp97yc",
+      "id": 2
+    },
+    {
+      "email": "thanh@gmail.com",
+      "password": "123456",
+      "token": "0AbHGOaDzm67kQ4EdcAd",
+      "id": 3
+    }
+  ]
+}
