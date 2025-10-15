@@ -13,11 +13,11 @@
 }
 
 .related-title{
+    text-align: left;
+    margin: 80px 0 40px;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     gap: 8px;
-    margin: 40px 0 20px;
 }
 
 .related-box{
@@ -31,4 +31,19 @@
     color: rgb(213, 10, 10);
     font-size: 20px;
     font-weight: 600;
+}
+
+.related-icon{
+    margin-left: auto;
+}
+
+.related-icon span{
+    font-size: 20px;
+    margin-left: 6px;
+    color: #000;
+}
+
+.related-icon span:hover{
+    cursor: pointer;
+    color: #db4444;
 }

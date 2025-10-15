@@ -1,0 +1,76 @@
+h1{
+    font-weight: 500;
+    margin-left: 20px;
+    padding-top: 40px;
+}
+
+.bill-wrapper{
+    display: flex;
+    gap: 100px;
+}
+
+.bill-form input{
+    width: 300px;
+    margin: 6px 0 20px;
+    border: none;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.bill-form div{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bill-form input:focus{
+    outline: none;
+}
+
+.bill-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.bill-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    padding-right: 10px;
+}
+
+/* 
+.bill-product-cell{
+    display: flex;
+    align-items: center;
+} */
+
+.bill-product-cell img{
+    width: 50px;
+}
+
+.bill-right h3{
+    text-align: end;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #dd0004;
+}
+
+.bill-btn{
+    border: none;
+    background-color: #dd4444;
+    padding: 14px 20px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 20px;
+    min-width: 200px;
+    max-width: 300px;
+    border-radius: 4px;
+    float: right;
+}
+
+.bill-btn:hover{
+    background-color: #be123c;
+    cursor: pointer;
+}

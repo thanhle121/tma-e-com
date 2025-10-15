@@ -2,11 +2,33 @@ import { useContext } from "react"
 import { CartContext } from "../../context/CartProvider/CartProvider"
 import './Cart.css'
 import { DeleteOutlined } from '@ant-design/icons'
+import { useNavigate } from "react-router"
+import { getCookie } from "../../helpers/cookie"
+import toast from "react-hot-toast"
 
 function Cart(){
     const { cart, deleteItem } = useContext(CartContext)
     const total = cart.reduce((sum, item)=> sum + item.price*item.quantity, 0)
+    const navigate = useNavigate()
+    const email = getCookie('email')
 
+    const handleCheckout = () => {
+        if(email && total !== 0){
+            navigate('/bill')
+        } else if(email && total === 0){
+            toast(()=>(
+                <span>Bạn chưa có sản phẩm nào! Hãy quay lại <a href="/" style={{color: 'green'}}><strong>TRANG CHỦ</strong></a> để mua hàng.</span>
+            ))
+        } else if(!email && total !==0){
+            toast(()=>(
+                <span>Bạn chưa đăng nhập! Hãy <a href="/signin" style={{color: 'red'}}><strong>ĐĂNG NHẬP</strong></a> để mua hàng.</span>
+            ))
+        } else if(!email && total == 0){
+            toast(()=>(
+                <span>Bạn chưa có sản phẩm nào! Hãy quay lại <a href="/" style={{color: 'green'}}><strong>TRANG CHỦ</strong></a> để mua hàng.</span>
+            ))
+        }
+    }
 
     return(
         <>
@@ -59,7 +81,7 @@ function Cart(){
             </div>
             <div className="cart-total">
                 <p>Total: ${total.toFixed(2)}</p>
-                <button className="check-btn">Check out</button>
+                <button className="check-btn" onClick={handleCheckout}>Check out</button>
             </div>
         </div>
         </>

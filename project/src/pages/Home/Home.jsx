@@ -84,50 +84,50 @@ function Home(){
                     <li><span><span className="danh-muc">Danh mục 1</span><RightOutlined />
                         <div className="submenu">
                             <ul>
-                                <li><Link to="/category/beauty">Beauty</Link></li>
-                                <li><Link to="/category/groceries">Groceries</Link></li>
-                                <li><Link to="/category/fragrances">Fragrances</Link></li>
-                                <li><Link to="/category/furniture">Furniture</Link></li>
+                                <li><Link to="/related/beauty">Beauty</Link></li>
+                                <li><Link to="/related/groceries">Groceries</Link></li>
+                                <li><Link to="/related/fragrances">Fragrances</Link></li>
+                                <li><Link to="/related/furniture">Furniture</Link></li>
                             </ul>
                         </div>
                     </span></li>
                     <li><span><span className="danh-muc">Danh mục 2</span><RightOutlined />
                         <div className="submenu">
                             <ul>
-                                <li><Link to="/category/beauty">Beauty</Link></li>
-                                <li><Link to="/category/groceries">Groceries</Link></li>
-                                <li><Link to="/category/fragrances">Fragrances</Link></li>
-                                <li><Link to="/category/furniture">Furniture</Link></li>
+                                <li><Link to="/related/beauty">Beauty</Link></li>
+                                <li><Link to="/related/groceries">Groceries</Link></li>
+                                <li><Link to="/related/fragrances">Fragrances</Link></li>
+                                <li><Link to="/related/furniture">Furniture</Link></li>
                             </ul>
                         </div>
                     </span></li>
                     <li><span><span className="danh-muc">Danh mục 3</span><RightOutlined />
                         <div className="submenu">
                             <ul>
-                                <li><Link to="/category/beauty">Beauty</Link></li>
-                                <li><Link to="/category/groceries">Groceries</Link></li>
-                                <li><Link to="/category/fragrances">Fragrances</Link></li>
-                                <li><Link to="/category/furniture">Furniture</Link></li>
+                                <li><Link to="/related/beauty">Beauty</Link></li>
+                                <li><Link to="/related/groceries">Groceries</Link></li>
+                                <li><Link to="/related/fragrances">Fragrances</Link></li>
+                                <li><Link to="/related/furniture">Furniture</Link></li>
                             </ul>
                         </div>
                     </span></li>
                     <li><span><span className="danh-muc">Danh mục 4</span><RightOutlined />
                         <div className="submenu">
                             <ul>
-                                <li><Link to="/category/beauty">Beauty</Link></li>
-                                <li><Link to="/category/groceries">Groceries</Link></li>
-                                <li><Link to="/category/fragrances">Fragrances</Link></li>
-                                <li><Link to="/category/furniture">Furniture</Link></li>
+                                <li><Link to="/related/beauty">Beauty</Link></li>
+                                <li><Link to="/related/groceries">Groceries</Link></li>
+                                <li><Link to="/related/fragrances">Fragrances</Link></li>
+                                <li><Link to="/related/furniture">Furniture</Link></li>
                             </ul>
                         </div>
                     </span></li>
                     <li><span><span className="danh-muc">Danh mục 5</span><RightOutlined />
                         <div className="submenu">
                             <ul>
-                                <li><Link to="/category/beauty">Beauty</Link></li>
-                                <li><Link to="/category/groceries">Groceries</Link></li>
-                                <li><Link to="/category/fragrances">Fragrances</Link></li>
-                                <li><Link to="/category/furniture">Furniture</Link></li>
+                                <li><Link to="/related/beauty">Beauty</Link></li>
+                                <li><Link to="/related/groceries">Groceries</Link></li>
+                                <li><Link to="/related/fragrances">Fragrances</Link></li>
+                                <li><Link to="/related/furniture">Furniture</Link></li>
                             </ul>
                         </div>
                     </span></li>

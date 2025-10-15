@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './ChangePassword.css'
 import { changePassword } from '../../service/changePasswordService'
+import cpass from '../../assets/cpass.jpg'
 
 export const ChangePassword = () => {
     const [oldPassword, setOldPassword] = useState('')
@@ -25,25 +26,30 @@ export const ChangePassword = () => {
             setNewPassword('')
             setConfirmPassword('')
         } catch(err) {
-            setMessage(`Đã có lỗi: ${err.message}`)
+            setMessage(`${err.message}`)
         }
     }
     return(
         <>
-        <form action="" onSubmit={handleSubmit}>
-            <h2>Change Password</h2>
-            <div className="input-wrapper">
-                <h3>Current Password</h3>
-                <input type="password" value={oldPassword} onChange={e=>setOldPassword(e.target.value)} required/>
-                <h3>New Password</h3>
-                <input type="password" value={newPassword} onChange={e=>setNewPassword(e.target.value)} required/>
-                <h3>Confirm Password</h3>
-                <input type="password" value={confirmPassword} onChange={e=>setConfirmPassword(e.target.value)} required/>
-            </div>
-            <button type='submit' className='btn-submit-cpass'>Submit</button>
-        </form>
+        <div className='cpass-wrapper'>
+            <div className='cpass-img'><img src={cpass} alt="" /></div>
+            <div>
+                <form action="" onSubmit={handleSubmit}>
+                    <h2>Change Password</h2>
+                    <div className="input-wrapper">
+                        <input type="password" value={oldPassword} onChange={e=>setOldPassword(e.target.value)} placeholder='Current Password' required/>
+                        
+                        <input type="password" value={newPassword} onChange={e=>setNewPassword(e.target.value)} placeholder='New Password' required/>
+                        
+                        <input type="password" value={confirmPassword} onChange={e=>setConfirmPassword(e.target.value)} placeholder='Confirm Password' required/>
+                    </div>
+                    {message && <p style={{ marginTop: 10, color: 'red'}}>{message}</p>}
+                    <button type='submit' className='btn-submit-cpass'>Submit</button>
+                </form>
 
-        {message && <p style={{ marginTop: 10, color: 'red'}}>{message}</p>}
+            </div>
+        </div>
+
         </>
     )
 }

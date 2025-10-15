@@ -15,3 +15,10 @@ export const fetchProductById = async (id) => {
     const product = products.find(p => p.id === Number(id))
     return product
 }
+
+
+export const fetchProductsByCategory = async (categoryNa) => {
+    const products = await fetchProducts()
+    const product = products.filter(p=> p.category == categoryNa)
+    return product
+}

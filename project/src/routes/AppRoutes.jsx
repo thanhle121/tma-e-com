@@ -9,17 +9,21 @@ import About from "../pages/About/About";
 import Register from "../pages/Register/Register";
 import { ChangePassword } from "../pages/ChangePassword/ChangePassword";
 import ProductDetail from "../pages/ProductDetail/ProductDetail";
+import Related from "../pages/Related/Related";
+import Bill from "../pages/Bill/Bill";
 
 function AppRoutes(){
     return(
         <Routes>
             <Route element={<DefaultLayout />}>
                 <Route path="/" element={<Home />}/>
-                <Route path="/category/:categoryName" element={<Home />}/>
+                {/* <Route path="/category/:categoryName" element={<Home />}/> */}
                 <Route path="/cart" element={<Cart />}/>
                 <Route path="/contact" element={<Contact />}/>
                 <Route path="/about" element={<About />}/>
+                <Route path="/related/:categoryName" element={<Related />}/>
                 <Route path="/cpass" element={<ChangePassword />}/>
+                <Route path="/bill" element={<Bill />}/>
                 <Route path="/products/:id" element={<ProductDetail />}/>
             </Route>
             
