@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './ChangePassword.css'
+import styles from './ChangePassword.module.css'
 import { changePassword } from '../../service/changePasswordService'
 import cpass from '../../assets/cpass.jpg'
 
@@ -31,22 +31,47 @@ export const ChangePassword = () => {
     }
     return(
         <>
-        <div className='cpass-wrapper'>
-            <div className='cpass-img'><img src={cpass} alt="" /></div>
+        <div className={styles.cpassWrapper}>
+            <div className={styles.cpassImg}>
+                <img src={cpass} alt="Change password" />
+            </div>
             <div>
-                <form action="" onSubmit={handleSubmit}>
+                <form className={styles.form} onSubmit={handleSubmit}>
                     <h2>Change Password</h2>
-                    <div className="input-wrapper">
-                        <input type="password" value={oldPassword} onChange={e=>setOldPassword(e.target.value)} placeholder='Current Password' required/>
-                        
-                        <input type="password" value={newPassword} onChange={e=>setNewPassword(e.target.value)} placeholder='New Password' required/>
-                        
-                        <input type="password" value={confirmPassword} onChange={e=>setConfirmPassword(e.target.value)} placeholder='Confirm Password' required/>
-                    </div>
-                    {message && <p style={{ marginTop: 10, color: 'red'}}>{message}</p>}
-                    <button type='submit' className='btn-submit-cpass'>Submit</button>
-                </form>
+                    <div className={styles.inputWrapper}>
+                        <input
+                            type="password"
+                            value={oldPassword}
+                            onChange={e => setOldPassword(e.target.value)}
+                            placeholder="Current Password"
+                            required
+                        />
 
+                        <input
+                            type="password"
+                            value={newPassword}
+                            onChange={e => setNewPassword(e.target.value)}
+                            placeholder="New Password"
+                            required
+                        />
+
+                        <input
+                            type="password"
+                            value={confirmPassword}
+                            onChange={e => setConfirmPassword(e.target.value)}
+                            placeholder="Confirm Password"
+                            required
+                        />
+                    </div>
+
+                    {message && (
+                        <p style={{ marginTop: 10, color: 'red' }}>{message}</p>
+                    )}
+
+                    <button type="submit" className={styles.btnSubmitCpass}>
+                        Submit
+                    </button>
+                </form>
             </div>
         </div>
 

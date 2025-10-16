@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import ProductCard from "../../components/ProductCard/ProductCard"
 import { CartContext } from "../../context/CartProvider/CartProvider"
-import './Home.css'
+import styles from './Home.module.css'
 import toast from "react-hot-toast"
 import { RightOutlined, LeftOutlined, LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons"
 import { Carousel } from "antd";
@@ -78,127 +78,87 @@ function Home(){
 
     return(
         <>
-        <div className="home-top">
-            <div className="home-top-left">
-                <ul>
-                    <li><span><span className="danh-muc">Danh mục 1</span><RightOutlined />
-                        <div className="submenu">
-                            <ul>
-                                <li><Link to="/related/beauty">Beauty</Link></li>
-                                <li><Link to="/related/groceries">Groceries</Link></li>
-                                <li><Link to="/related/fragrances">Fragrances</Link></li>
-                                <li><Link to="/related/furniture">Furniture</Link></li>
-                            </ul>
-                        </div>
-                    </span></li>
-                    <li><span><span className="danh-muc">Danh mục 2</span><RightOutlined />
-                        <div className="submenu">
-                            <ul>
-                                <li><Link to="/related/beauty">Beauty</Link></li>
-                                <li><Link to="/related/groceries">Groceries</Link></li>
-                                <li><Link to="/related/fragrances">Fragrances</Link></li>
-                                <li><Link to="/related/furniture">Furniture</Link></li>
-                            </ul>
-                        </div>
-                    </span></li>
-                    <li><span><span className="danh-muc">Danh mục 3</span><RightOutlined />
-                        <div className="submenu">
-                            <ul>
-                                <li><Link to="/related/beauty">Beauty</Link></li>
-                                <li><Link to="/related/groceries">Groceries</Link></li>
-                                <li><Link to="/related/fragrances">Fragrances</Link></li>
-                                <li><Link to="/related/furniture">Furniture</Link></li>
-                            </ul>
-                        </div>
-                    </span></li>
-                    <li><span><span className="danh-muc">Danh mục 4</span><RightOutlined />
-                        <div className="submenu">
-                            <ul>
-                                <li><Link to="/related/beauty">Beauty</Link></li>
-                                <li><Link to="/related/groceries">Groceries</Link></li>
-                                <li><Link to="/related/fragrances">Fragrances</Link></li>
-                                <li><Link to="/related/furniture">Furniture</Link></li>
-                            </ul>
-                        </div>
-                    </span></li>
-                    <li><span><span className="danh-muc">Danh mục 5</span><RightOutlined />
-                        <div className="submenu">
-                            <ul>
-                                <li><Link to="/related/beauty">Beauty</Link></li>
-                                <li><Link to="/related/groceries">Groceries</Link></li>
-                                <li><Link to="/related/fragrances">Fragrances</Link></li>
-                                <li><Link to="/related/furniture">Furniture</Link></li>
-                            </ul>
-                        </div>
-                    </span></li>
-                </ul>
-            </div>
-            <div className="home-top-right" >
-                <Carousel autoplay>
-                    <div>
-                        <img src={banner1} alt="" style={{ width: "100%", height: "400px", objectFit: "cover"}}/>
-                    </div>
-                    <div>
-                        <img src={banner2} alt="" style={{ width: "100%", height: "400px", objectFit: "cover"}}/>
-                    </div>
-                    <div>
-                        <img src={banner3} alt="" style={{ width: "100%", height: "400px", objectFit: "cover"}}/>
-                    </div>
-                </Carousel>
-            </div>
-        </div>
-        <div className="home-title">
-            <div className="home-title-box"></div>
-            <div className="home-title-title">Sản phẩm sale</div>
-            <div className="home-title-icon">
-                <LeftCircleOutlined onClick={handlePrev}/>
-                <RightCircleOutlined onClick={handleNext}/>
-            </div>
-        </div>
-
-        <div className="home-list-sale">
-            {visibleProducts.map((p)=>(
-                <div key={p.id} className='sale-products'>
-                    <div className="discount-badge">{p.discountPercentage}%</div>
-                    <ProductCard onClick={()=>handlePDetail(p.id)} key={p.id} product={p} addToCart={handleAddToCart}/>
+            <div className={styles.homeTop}>
+                <div className={styles.homeTopLeft}>
+                    <ul>
+                        {[1, 2, 3, 4, 5].map(i => (
+                            <li key={i}>
+                                <span>
+                                    <span className={styles.danhMuc}>Danh mục {i}</span>
+                                    <RightOutlined />
+                                    <div className={styles.submenu}>
+                                        <ul>
+                                            <li><Link to="/related/beauty">Beauty</Link></li>
+                                            <li><Link to="/related/groceries">Groceries</Link></li>
+                                            <li><Link to="/related/fragrances">Fragrances</Link></li>
+                                            <li><Link to="/related/furniture">Furniture</Link></li>
+                                        </ul>
+                                    </div>
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-            ))}
-        </div>
 
-        <div>
-            <img src={bannerBot} alt="" style={{ width: "100%", height: "400px", objectFit: "cover", marginTop: 40}}/>
-        </div>
+                <div className={styles.homeTopRight}>
+                    <Carousel autoplay>
+                        {[banner1, banner2, banner3].map((b, i) => (
+                            <div key={i}>
+                                <img src={b} alt="" style={{ width: "100%", height: "400px", objectFit: "cover" }} />
+                            </div>
+                        ))}
+                    </Carousel>
+                </div>
+            </div>
 
-        <div className="home-title">
-            <div className="home-title-box"></div>
-            <div className="home-title-title">Danh sách sản phẩm</div>
-        </div>
-        <div className="home-list">
-            {filteredProducts.slice(0, visibleCount).map((p)=>(
-                <ProductCard onClick={()=>handlePDetail(p.id)} key={p.id} product={p} addToCart={handleAddToCart}/>
-            ))}
-        </div>
+            <div className={styles.homeTitle}>
+                <div className={styles.homeTitleBox}></div>
+                <div className={styles.homeTitleTitle}>Sản phẩm sale</div>
+                <div className={styles.homeTitleIcon}>
+                    <LeftCircleOutlined onClick={handlePrev} />
+                    <RightCircleOutlined onClick={handleNext} />
+                </div>
+            </div>
 
-        <div className="btn-line">
-            {visibleCount < filteredProducts.length &&(
-                <button className="btn-more"
-                onClick={()=>{setVisibleCount(prev=>prev+8)}}
-                >Xem thêm</button>
-            )}
+            <div className={styles.homeListSale}>
+                {visibleProducts.map((p) => (
+                    <div key={p.id} className={styles.saleProducts}>
+                        <div className={styles.discountBadge}>{p.discountPercentage}%</div>
+                        <ProductCard onClick={() => handlePDetail(p.id)} product={p} addToCart={handleAddToCart} />
+                    </div>
+                ))}
+            </div>
 
-            {visibleCount > 8 &&(
-                <button className="btn-less"
-                onClick={()=>{setVisibleCount(prev=>Math.max(prev-8, 8))}}
-                >Rút gọn</button>
-            )}
-        </div>
+            <div>
+                <img src={bannerBot} alt="" style={{ width: "100%", height: "400px", objectFit: "cover", marginTop: 40 }} />
+            </div>
 
-        <div className="home-title">
-            <div className="home-title-box"></div>
-            <div className="home-title-title">Coming Soon...</div>
-        </div>
-        
-        <CoommingSoon />
+            <div className={styles.homeTitle}>
+                <div className={styles.homeTitleBox}></div>
+                <div className={styles.homeTitleTitle}>Danh sách sản phẩm</div>
+            </div>
+
+            <div className={styles.homeList}>
+                {filteredProducts.slice(0, visibleCount).map((p) => (
+                    <ProductCard onClick={() => handlePDetail(p.id)} key={p.id} product={p} addToCart={handleAddToCart} />
+                ))}
+            </div>
+
+            <div className={styles.btnLine}>
+                {visibleCount < filteredProducts.length && (
+                    <button className={styles.btnMore} onClick={() => setVisibleCount(prev => prev + 8)}>Xem thêm</button>
+                )}
+                {visibleCount > 8 && (
+                    <button className={styles.btnLess} onClick={() => setVisibleCount(prev => Math.max(prev - 8, 8))}>Rút gọn</button>
+                )}
+            </div>
+
+            <div className={styles.homeTitle}>
+                <div className={styles.homeTitleBox}></div>
+                <div className={styles.homeTitleTitle}>Coming Soon...</div>
+            </div>
+
+            <CoommingSoon />
         </>
     )
 }

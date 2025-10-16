@@ -11,6 +11,8 @@ import { ChangePassword } from "../pages/ChangePassword/ChangePassword";
 import ProductDetail from "../pages/ProductDetail/ProductDetail";
 import Related from "../pages/Related/Related";
 import Bill from "../pages/Bill/Bill";
+import OrderInfo from "../pages/OrderInfo/OrderInfo";
+import WishList from "../pages/WishList/WishList";
 
 function AppRoutes(){
     return(
@@ -24,6 +26,8 @@ function AppRoutes(){
                 <Route path="/related/:categoryName" element={<Related />}/>
                 <Route path="/cpass" element={<ChangePassword />}/>
                 <Route path="/bill" element={<Bill />}/>
+                <Route path="/order" element={<OrderInfo />}/>
+                <Route path="/wish-list" element={<WishList />}/>
                 <Route path="/products/:id" element={<ProductDetail />}/>
             </Route>
             

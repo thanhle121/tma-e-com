@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchProductById, fetchProductsByCategory } from "../../service/productService";
 import { PDetail } from "../../components/PDetail/PDetail";
-import './ProductDetail.css'
+import styles from './ProductDetail.module.css'
 import { RelatedProducts } from "../../components/RelatedProduct/RelatedProducts";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
 
@@ -53,16 +53,18 @@ function ProductDetail() {
 
     return (
         <>
-            <div className='product-path'>
-                <span onClick={()=>navigate('/')} className="">Products</span> / 
-                <span className="path-category">{product.category}</span>  / 
+            <div className={styles.productPath}>
+                <span onClick={() => navigate('/')}>Products</span> / 
+                <span className={styles.pathCategory}>{product.category}</span> / 
                 <strong>{product.title}</strong>
             </div>
+
             <PDetail product={product} />
-            <div className="related-title">
-                <div className="related-box"></div>
-                <div className="related-text">Related Product</div>
-                <div className='related-icon'>
+
+            <div className={styles.relatedTitle}>
+                <div className={styles.relatedBox}></div>
+                <div className={styles.relatedText}>Related Product</div>
+                <div className={styles.relatedIcon}>
                     <LeftCircleOutlined onClick={handlePrev} />
                     <RightCircleOutlined onClick={handleNext} />
                 </div>

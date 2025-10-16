@@ -2,7 +2,7 @@ import { useNavigate } from "react-router"
 import { getCookie } from "../../helpers/cookie"
 import { useContext, useEffect, useState } from "react"
 import { CartContext } from "../../context/CartProvider/CartProvider"
-import './Bill.css'
+import styles from './Bill.module.css'
 import toast from "react-hot-toast"
 import { get, patch } from "../../utils/request"
 
@@ -54,19 +54,20 @@ function Bill(){
         try{
             const account = await get(`accounts/${userId}`)
 
-            // 🧾 Tạo danh sách sản phẩm gọn nhẹ (chỉ giữ thông tin cần thiết)
-            // const orderProducts = cart.map(item => ({
-            //     title: item.title,
-            //     quantity: item.quantity,
-            //     price: item.price,
-            //     total: item.price * item.quantity
-            // }))
+            const orderProducts = cart.map(item => ({
+                title: item.title,
+                thumbnail: item.thumbnail,
+                quantity: item.quantity,
+                price: item.price,
+                total: item.price * item.quantity, 
+                brand: item.brand
+            }))
 
             const newOrder = {
                 id: Date.now(),
                 customer,
-                products: cart,
-                // products: orderProducts,
+                // products: cart,
+                products: orderProducts,
                 total,
                 date: new Date().toLocaleString()
             }
@@ -87,29 +88,53 @@ function Bill(){
 
     return(
         <>
-            <h1>Bill Details</h1>
-            <div className="bill-wrapper">
-                <div className="bill-left">
-                    <form action="" className="bill-form">
+            <h1 className={styles.title}>Bill Details</h1>
+
+            <div className={styles.billWrapper}>
+                <div className={styles.billLeft}>
+                    <form className={styles.billForm}>
                         <div>Name</div>
-                        <input type="text" name="name" value={customer.name} onChange={handleChange} required/>
-                        
+                        <input
+                            type="text"
+                            name="name"
+                            value={customer.name}
+                            onChange={handleChange}
+                            required
+                        />
+
                         <div>Email</div>
-                        <input type="text" name="email" value={customer.email} onChange={handleChange} />
+                        <input
+                            type="text"
+                            name="email"
+                            value={customer.email}
+                            onChange={handleChange}
+                        />
 
                         <div>Phone Number</div>
-                        <input type="number" name="phone" value={customer.phone} onChange={handleChange} required/>
+                        <input
+                            type="number"
+                            name="phone"
+                            value={customer.phone}
+                            onChange={handleChange}
+                            required
+                        />
 
                         <div>Address</div>
-                        <input type="text" name="address" value={customer.address} onChange={handleChange} required />
+                        <input
+                            type="text"
+                            name="address"
+                            value={customer.address}
+                            onChange={handleChange}
+                            required
+                        />
                     </form>
                 </div>
-                <div className="bill-right">
-                    <table className="bill-table">
+                <div className={styles.billRight}>
+                    <table className={styles.billTable}>
                         <tbody>
-                            {cart.map((item)=>(
+                            {cart.map((item) => (
                                 <tr key={item.id}>
-                                    <td className="bill-product-cell">
+                                    <td className={styles.billProductCell}>
                                         <img src={item.thumbnail} alt="" />
                                         <span>{item.title}</span>
                                     </td>
@@ -120,9 +145,10 @@ function Bill(){
                         </tbody>
                     </table>
                     <h3>Total: {total.toLocaleString()}$</h3>
-                    <button className="bill-btn" onClick={handlePlaceOrder}>PLACE ORDER</button>
+                    <button className={styles.billBtn} onClick={handlePlaceOrder}>PLACE ORDER</button>
                 </div>
             </div>
+
         </>
     )
 }

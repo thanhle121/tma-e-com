@@ -1,16 +1,45 @@
-import { EyeOutlined, HeartOutlined } from '@ant-design/icons'
+import { HeartOutlined } from '@ant-design/icons'
 import styles from './ProductCard.module.css'
 import { Rate } from 'antd'
+import { getCookie } from '../../helpers/cookie'
+import toast from 'react-hot-toast'
+import { get, patch } from '../../utils/request'
 
 function ProductCard({ product, addToCart, onClick, showAddToCart = true }){
+    const userId = getCookie('id')
+    
+    const handleFav = async () => {
+        if(!userId){
+            toast('Vui lòng đăng nhập để thêm sản phẩm yêu thích!')
+            return
+        }
+
+        try{
+            const account = await get(`accounts/${userId}`)
+            const favorites = account.favorites || []
+
+            const existed = favorites.some(item => item.id === product.id)
+            if(existed){
+                toast('Sản phẩm này đã có trong Wish List')
+                return
+            }
+
+            const updatedFavorites = [...favorites, product]
+            await patch(`accounts/${userId}`, {favorites: updatedFavorites})
+            toast.success('Đã thêm sản phẩm vào Wish List!')
+        } catch (err){
+            console.log(err);
+            toast.error('Đã có lỗi, vui lòng thử lại.')
+        }
+    }
+
     return(
         <>
         <div className={styles.productCard}>
             <div className={styles.cardContainer}>
                 <img onClick={onClick} src={product.thumbnail} className={styles.productImage} alt="" />
                 <div className={styles.icons}>
-                    <HeartOutlined className={styles.icon}/>
-                    <EyeOutlined className={styles.icon} />
+                    <HeartOutlined className={styles.icon} onClick={handleFav}/>
                 </div>
                 {showAddToCart && (
                     <button className={styles.cardBtn} onClick={()=>addToCart(product)}>Add to cart</button>

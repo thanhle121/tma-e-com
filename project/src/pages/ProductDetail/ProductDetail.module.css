@@ -1,0 +1,49 @@
+.productPath {
+  text-align: left;
+  margin: 30px 0;
+}
+
+.productPath span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.pathCategory {
+  text-transform: capitalize;
+}
+
+.relatedTitle {
+  text-align: left;
+  margin: 80px 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.relatedBox {
+  background-color: rgb(213, 10, 10);
+  border-radius: 4px;
+  width: 14px;
+  height: 30px;
+}
+
+.relatedText {
+  color: rgb(213, 10, 10);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.relatedIcon {
+  margin-left: auto;
+}
+
+.relatedIcon span {
+  font-size: 20px;
+  margin-left: 6px;
+  color: #000;
+}
+
+.relatedIcon span:hover {
+  cursor: pointer;
+  color: #db4444;
+}

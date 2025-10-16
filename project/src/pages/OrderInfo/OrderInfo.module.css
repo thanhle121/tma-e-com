@@ -1,0 +1,6 @@
+.tableProducts :global(.ant-table-thead > tr > th) {
+    background: linear-gradient(90deg, #b6c6e4, #96bbe6);
+    color: #12263f;
+    font-weight: 600;
+    border-bottom: 1px solid #e6eef8;
+}

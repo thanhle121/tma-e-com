@@ -1,0 +1,181 @@
+.homeTop {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.homeTopRight {
+    width: 100%;
+    max-width: 940px;
+    height: 400px;
+    flex: 1;
+}
+
+.homeTopLeft {
+    border-right: 1px solid #ccc;
+    position: relative;
+    width: 250px;
+}
+
+.homeTopLeft ul {
+    margin: 0;
+}
+
+.homeTopLeft ul li {
+    list-style: none;
+    padding: 16px;
+}
+
+.homeTopLeft ul li > span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.danhMuc {
+    margin-right: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.homeTopLeft ul li:hover {
+    background-color: #3a3b3a;
+    cursor: pointer;
+    color: #fff;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: -2px;
+    left: calc(100%);
+    width: calc(100% + 940px - 220px);
+    height: calc(101%);
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    z-index: 10;
+}
+
+.homeTopLeft .submenu ul li {
+    color: #000;
+}
+
+.homeTopLeft li:hover .submenu ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.homeTopLeft li:hover .submenu ul li:hover {
+    background-color: #fff;
+}
+
+.homeTopLeft li:hover .submenu ul li:hover a {
+    background-color: #fff;
+    color: rgb(219, 35, 35);
+}
+
+.homeTopLeft li:hover .submenu {
+    display: block;
+}
+
+/* --- TITLE --- */
+.homeTitle {
+    text-align: left;
+    margin: 80px 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.homeTitleBox {
+    background-color: rgb(213, 10, 10);
+    border-radius: 4px;
+    width: 14px;
+    height: 30px;
+}
+
+.homeTitleTitle {
+    color: rgb(213, 10, 10);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.homeTitleIcon {
+    margin-left: auto;
+}
+
+.homeTitleIcon span {
+    font-size: 20px;
+    margin-left: 6px;
+}
+
+.homeTitleIcon span:hover {
+    cursor: pointer;
+    color: #db4444;
+}
+
+/* --- LISTS --- */
+.homeList,
+.homeListSale {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    row-gap: 50px;
+    column-gap: 20px;
+}
+
+.saleProducts {
+    position: relative;
+}
+
+.discountBadge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff0004;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 4px 6px;
+    border-radius: 2px;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* --- BUTTONS --- */
+.btnLine {
+    text-align: center;
+    margin: 30px 0 60px;
+}
+
+.btnMore {
+    background-color: #db4444;
+    padding: 12px 18px;
+    border-radius: 4px;
+    min-width: 200px;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.btnMore:hover {
+    background-color: #be123c;
+    cursor: pointer;
+}
+
+.btnLess {
+    background-color: #9d9d9d;
+    min-width: 200px;
+    padding: 12px 18px;
+    border-radius: 4px;
+    color: #fff;
+    border: 1px solid transparent;
+    margin-left: 2px;
+}
+
+.btnLess:hover {
+    background-color: #5e5e5e;
+    cursor: pointer;
+}

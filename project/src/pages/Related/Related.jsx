@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router'
-import './Related.css'
+import styles from './Related.module.css'
 import { useEffect, useState } from 'react';
 import { fetchProductsByCategory } from '../../service/productService';
 import { RelatedProducts } from '../../components/RelatedProduct/RelatedProducts';
@@ -24,6 +24,11 @@ function Related() {
 
         relatedProduct()
     }, [])
+
+    const handleProductClick = (productId) => {
+        navigate(`/products/${productId}`)
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
     
 
     if (loading) return <p>Đang tải sản phẩm...</p>;
@@ -33,12 +38,12 @@ function Related() {
         <>
             {product && (
                 <>
-                <div className='product-path'>
+                <div className={styles.productPath}>
                     <span onClick={()=>navigate('/')} className="">Products</span> / 
-                    <span className="path-category"><strong> {params.categoryName}</strong></span>
+                    <span className={styles.pathCategory}><strong> {params.categoryName}</strong></span>
                 </div>
 
-                <RelatedProducts products={product}/>
+                <RelatedProducts products={product} onProductClick={handleProductClick}/>
                 </>
             )}
         </>

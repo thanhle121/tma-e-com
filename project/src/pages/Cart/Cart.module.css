@@ -1,25 +1,25 @@
-.cart-wrapper{
+.cartWrapper {
     display: flex;
     margin-bottom: 40px;
     justify-content: space-between;
     gap: 80px;
 }
 
-h2{
+.title {
     text-align: center;
     font-size: 34px;
     margin: 40px 0;
 }
 
-.cart-list{
+.cartList {
     flex: 3;
 }
 
-.cart-list ul li{
+.cartList ul li {
     list-style: none;
 }
 
-.cart-table{
+.cartTable {
     width: 100%;
     border-collapse: collapse;
     background-color: aliceblue;
@@ -28,30 +28,30 @@ h2{
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.cart-table th,
-.cart-table td {
+.cartTable th,
+.cartTable td {
     padding: 12px 15px;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
-.cart-table th {
+.cartTable th {
     background-color: #f5f5f5;
     font-weight: 600;
 }
 
-.cart-table tr:hover {
+.cartTable tr:hover {
     background-color: #fafafa;
 }
 
-.cart-table tbody tr button{
+.cartTable tbody tr button {
     color: red;
     border: none;
     background-color: aliceblue;
     cursor: pointer;
 }
 
-.cart-total{
+.cartTotal {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -63,12 +63,12 @@ h2{
     min-width: 150px;
 }
 
-.cart-total p{
+.cartTotal p {
     text-align: center;
     font-weight: 600;
 }
 
-.check-btn{
+.checkBtn {
     background-color: rgb(225, 48, 48);
     border: none;
     color: #fff;
@@ -76,7 +76,7 @@ h2{
     padding: 10px 0;
 }
 
-.check-btn:hover{
+.checkBtn:hover {
     opacity: 0.85;
     cursor: pointer;
 }
